@@ -1,5 +1,4 @@
-public class XorWhat {
-
+class XorWhat {
     public static void main(String[] args) {
         String input = args[0];
         String[] splitInput = input.split("\n");
@@ -8,7 +7,6 @@ public class XorWhat {
 
         for (int index = 1; index < splitInput.length;) {
             int numMods = Integer.parseInt(splitInput[index].split(" ")[1]);
-            int sizeArray = Integer.parseInt(splitInput[index].split(" ")[0]);
             String[] initialValsStr = splitInput[index + 1].split(" ");
             int[] initialVals = new int[initialValsStr.length];
             for (int i = 0; i < initialValsStr.length; i++) {
