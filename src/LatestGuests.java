@@ -26,7 +26,7 @@ class LatestGuests {
                 consulates.get(startingConsulate).add(i - index);
             }
 
-            for (int i = 0; i < numRotations - 2; i++) {
+            for (int i = 0; i < numRotations - 1; i++) {
                 List<List<Integer>> newConsulates = new ArrayList<List<Integer>>(numCons);
                 for (int j = 0; j < numCons; j++) newConsulates.add(new ArrayList<Integer>());
                 for (int j = 0; j < numCons; j++) {
@@ -43,7 +43,12 @@ class LatestGuests {
 
             HashMap<Integer, Integer> memories = new HashMap<Integer, Integer>();
 
-
+            for (List<Integer> consulate : consulates) {
+                for (Integer i : consulate) {
+                    if (! memories.containsKey(i)) memories.put(i, 1);
+                    else memories.put(i, memories.get(i) + 1);
+                }
+            }
 
             res.append("Case #");
             res.append(testCaseNumber++);
